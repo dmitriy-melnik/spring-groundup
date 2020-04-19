@@ -9,6 +9,7 @@ import com.sulevsky.service.TaskService;
 import com.sulevsky.service.WorkerService;
 import com.sulevsky.view.ReportView;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -24,7 +25,12 @@ import java.util.List;
 
 public class DefaultServlet extends HttpServlet {
 
+    @Autowired
     private ReportGenerationService reportGenerationService;
+
+    @Autowired
+    @Qualifier("consoleReportView")
+    private ReportView reportView;
 
     public ReportView getReportView() {
         return reportView;
@@ -34,8 +40,6 @@ public class DefaultServlet extends HttpServlet {
     public void setReportView(ReportView reportView) {
         this.reportView = reportView;
     }
-
-    private ReportView reportView;
 
     @Override
     public void init() throws ServletException {

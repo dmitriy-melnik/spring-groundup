@@ -3,7 +3,7 @@ package com.sulevsky.view;
 import com.sulevsky.model.Report;
 import org.springframework.stereotype.Component;
 
-@Component("myCustomNamedBean")
+@Component("consoleReportView")
 public class ConsoleReportView implements ReportView {
 
     @Override

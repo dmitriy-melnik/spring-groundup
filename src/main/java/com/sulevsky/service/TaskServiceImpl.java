@@ -3,14 +3,18 @@ package com.sulevsky.service;
 import com.sulevsky.model.Task;
 import com.sulevsky.model.Worker;
 import com.sulevsky.repository.TaskRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Component
 public class TaskServiceImpl implements TaskService {
     private IdGenerator idGenerator = new IdGenertorImpl();//must be singleton
+    @Autowired
     private TaskRepository taskRepository;
 
     public TaskServiceImpl(TaskRepository taskRepository) {

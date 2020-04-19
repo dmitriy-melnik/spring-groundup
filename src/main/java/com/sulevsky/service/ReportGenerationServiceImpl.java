@@ -3,6 +3,7 @@ package com.sulevsky.service;
 import com.sulevsky.model.Report;
 import com.sulevsky.model.Task;
 import com.sulevsky.model.Worker;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.math.BigDecimal;
 import java.time.Duration;
@@ -10,7 +11,10 @@ import java.util.List;
 
 public class ReportGenerationServiceImpl implements ReportGenerationService {
 
+    @Autowired
     private TaskService taskService;
+
+    @Autowired
     private WorkerService workerService;
 
     public ReportGenerationServiceImpl(TaskService taskService,
